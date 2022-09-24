@@ -33,15 +33,15 @@ void consecutive_primes(int n, int * * output_array, int * output_array_size)
     }
     for(int i = 0; integer_array[i] <= upper_bound; ++i) {
         if (integer_array[i] != 0) {
-            /* We start from p^2 as all other multiple 2p ... (p-1)p will have been eliminated */
+            /* We start from p^2 as all other multiples 2p ... (p-1)p will have been eliminated */
             int j = integer_array[i] * integer_array[i];
             while(j <= n) {
                 /* mark element as eliminated */
                 if(integer_array[j-2] != 0) {
                     integer_array[j-2] = 0;
+                    /* Record the omissions to calculate output array length without re-iterating over the array */
                     ++omissions;
                 }
-                /* Record the omissions to calculate output array length without re-iterating over the array */
                 /* Increment j to its next multiple */
                 j = j + integer_array[i];
             }
