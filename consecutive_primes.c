@@ -61,9 +61,7 @@ int main(int argc, char * * argv)
     int * output;
     int output_size;
     consecutive_primes(atoi(argv[1]), &output, &output_size);
-    for(int i = 0; i < output_size; ++i) {
-        printf("%d ", output[i]);
-    }
+    print_array(output_size, output_size);
     free(output);
     return 0;
 }
