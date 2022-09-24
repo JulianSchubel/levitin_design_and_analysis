@@ -19,7 +19,7 @@ void consecutive_primes(int n, int * * output_array, int * output_array_size)
     if(n < 2) {
         exit(EXIT_FAILURE);
     }
-    /* p^2 cannot exceed n, that is p < sqrt(n) (here we have an offset of 2 to identify the index as our array begins from 2 - i.e. the first prime) */
+    /* p^2 cannot exceed n, that is p < sqrt(n) */
     int upper_bound = (int)sqrt((double)n);
     /* Non-primes eliminated */
     int omissions = 0;
