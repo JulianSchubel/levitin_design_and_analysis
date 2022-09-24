@@ -17,9 +17,8 @@ void print_array(int * array, int array_size)
 void consecutive_primes(int n, int * * output_array, int * output_array_size) 
 {
     if(n < 2) {
-        *output_array = (int*) malloc(sizeof(int));
-        *output_array_size = 0;
-        return;
+        printf("n must be >= 2; first prime is 2\n");
+        exit(EXIT_FAILURE);
     }
     /* p^2 cannot exceed n, that is p < sqrt(n) */
     int upper_bound = (int)sqrt((double)n);
